@@ -1,0 +1,583 @@
+/* General css */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* Background Color */
+    --bg-red: #d3282e;
+    --bg-white: #fff;
+    --bg-light-white: #f6f7f8;
+    --bg-yellow: #fdd80D;
+    --bg-green: #009900;
+
+    /* Text Color */
+    --text-black: #1f1f1f;
+    --text-white: #fff;
+    --text-red: #d3282e;
+    --text-yellow: #fdd80D;
+    --text-green: #009900;
+
+    /* Fonts */
+    --primary-font: 'Great Vibes', cursive;
+    --secondary-font: 'Poppins', sans-serif;
+}
+
+body{
+    font-family: var(--secondary-font);
+    background-color: var(--bg-white);
+}
+
+/* Custom CSS */
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--bg-light-white);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--bg-green);
+}
+
+/* predefine css code */
+.text-red{
+    color: var(--text-red);
+}
+.bg-red{
+    background-color: var(--bg-red) !important;
+}
+.bg-light-white{
+    background-color: var(--bg-light-white) !important;
+}
+.bg-green{
+    background-color: var(--bg-green) !important;
+}
+h1{
+    font-size: 80px;
+    font-family: var(--primary-font);
+    letter-spacing: 5px;
+    font-weight: 500;
+    color: var(--text-white);
+}
+h2{
+    font-size: 35px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: var(--text-white);
+}
+h3{
+    font-size: 35px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 15px;
+}
+h4{
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: var(--text-white);
+    margin-bottom: 15px;
+}
+h5{
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: var(--text-white);
+    margin-bottom: 15px;
+}
+p{
+    margin-top: 5px;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: normal;
+    color: var(--text-white);
+}
+.title-box .seprator-img{
+    background: url(../image/border.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 54px;
+    width: 204px;
+    padding: 0 0 52px;
+    margin: 0 auto 30px;
+}
+
+/* common button css code starting here */
+.main-btn{
+    background-color: var(--bg-yellow);
+    color: var(--text-black);
+    font-weight: 400;
+    font-size: 15px;
+    padding: 10px 25px;
+    border-radius: 0 15px 0 15px;
+    -webkit-border-radius: 0 15px 0 15px;
+    -moz-border-radius: 0 15px 0 15px;
+    -ms-border-radius: 0 15px 0 15px;
+    -o-border-radius: 0 15px 0 15px;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+    display: inline-block;
+    text-decoration: none;
+    transform: perspective(1px) translateZ(0);
+    -webkit-transform: perspective(1px) translateZ(0);
+    -moz-transform: perspective(1px) translateZ(0);
+    -ms-transform: perspective(1px) translateZ(0);
+    -o-transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0 0 0 / 0%);
+    position: relative;
+    overflow: hidden;
+    transition-property: color;
+    -webkit-transition-property: color;
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+}
+.main-btn:hover{
+    color: var(--text-white) !important;
+}
+.main-btn::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--bg-green);
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transition-property: transform;
+    -webkit-transition-property: transform;
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    -webkit-transition-timing-function: ease-out;
+}
+.main-btn:hover::before, .main-btn:focus::before, .main-btn:active::before{
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+}
+/* common button css code end here */
+
+/* snowflakes css code starting here */
+.snowflakes{
+    background: url(../image/snow1.png), url(../image/snow2.png), url(../image/snow3.png);
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: fixed;
+    background-repeat: repeat;
+    z-index: 10000;
+    pointer-events: none;
+    animation: snow_animation 10s linear infinite;
+    -webkit-animation: snow_animation 10s linear infinite;
+    -moz-animation: snow_animation 10s linear infinite;
+}
+@keyframes snow_animation{
+    0%{
+        background-position: 0 0, 0 0, 0 0;
+    }
+    100%{
+        background-position: 500px 3000px, 0 400px, 0 300px;
+    }
+}
+@-webkit-keyframes snow_animation{
+    0%{
+        background-position: 0 0, 0 0, 0 0;
+    }
+    100%{
+        background-position: 500px 3000px, 0 400px, 0 300px;
+    }
+}
+@-moz-keyframes snow_animation{
+    0%{
+        background-position: 0 0, 0 0, 0 0;
+    }
+    100%{
+        background-position: 500px 3000px, 0 400px, 0 300px;
+    }
+}
+/* snowflakes css code end here */
+
+/* header section css code starting here */
+.header_wrapper .navbar{
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -o-transition: all .2s linear;
+}
+.header_wrapper .navbar .navbar-brand{
+    max-width: 210px;
+    height: auto;
+    filter: invert(2);
+    -webkit-filter: invert(2);
+}
+.header_wrapper .navbar .nav-item{
+    margin: 0 10px;
+}
+.header_wrapper .navbar .nav-item .nav-link{
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-white);
+    line-height: 1;
+    letter-spacing: 1px;
+}
+.header_wrapper .navbar .nav-item .nav-link.active{
+    color: var(--text-yellow);
+}
+.header-scrolled{
+    position: fixed;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    background-color: var(--bg-yellow) !important;
+    box-shadow: 0 4px 6px 0 rgba(12, 0, 46, .05);
+    -webkit-box-shadow: 0 4px 6px 0 rgba(12, 0, 46, .05);
+}
+.header-scrolled .nav-item .nav-link{
+    color: var(--text-black) !important;
+}
+.header-scrolled .nav-item .nav-link.active{
+    color: var(--text-red) !important;
+}
+.header-scrolled .navbar-brand{
+    filter: invert(0) !important;
+    -webkit-filter: invert(0) !important;
+}
+/* header section css code end here */
+
+/* banner section css code starting here */
+.banner_wrapper{
+    background-color: var(--bg-red);
+}
+.banner_wrapper .carousel-caption{
+    bottom: 3.5rem;
+}
+.banner_wrapper .carousel-indicators [data-bs-target]{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: var(--bg-yellow) !important;
+}
+/* banner section css code end here */
+
+/* best-deals section css code starting here */
+.best_deals_wrapper .deals-item{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.best_deals_wrapper .deals-item img{
+    max-width: 100%;
+    height: auto;
+    transform-style: unset;
+    -webkit-transform-style: unset;
+    transition: all 0.7s;
+    -webkit-transition: all 0.7s;
+    -moz-transition: all 0.7s;
+    -ms-transition: all 0.7s;
+    -o-transition: all 0.7s;
+}
+.best_deals_wrapper .deals-item:hover img{
+    transform: scale(1.10);
+    -webkit-transform: scale(1.10);
+    -moz-transform: scale(1.10);
+    -ms-transform: scale(1.10);
+    -o-transform: scale(1.10);
+}
+.best_deals_wrapper .deals-item .deals-text-right{
+    position: absolute;
+    z-index: 1;
+    right: 30px;
+}
+.best_deals_wrapper .deals-item .deals-text-centerTop{
+    position: absolute;
+    top: 8%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+/* best-deals section css code end here */
+
+/* donate section css code starting here */
+.donate_wrapper .donate-item{
+    position: relative;
+    float: left;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+.donate_wrapper .donate-item img{
+    transition: 0.3s all ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -ms-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+}
+.donate_wrapper .donate-item img:hover{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+.donate_wrapper .donate-item:hover{
+    border-color: var(--bg-red) !important;
+}
+/* donate section css code end here */
+
+/* testimonials section css code starting here */
+.testimonial_wrapper .carousel-indicators [data-bs-target]{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: var(--bg-yellow) !important;
+}
+/* testimonials section css code end here */
+
+/* WithFooter section css code starting here */
+.footer_wrapper{
+    width: 100%;
+    height: auto;
+    background-image: url(../image/footer-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.footer_wrapper .block_newsletter{
+    background-color: var(--bg-yellow);
+    overflow: hidden;
+    display: block;
+    padding: 35px 30px;
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    -ms-border-radius: 80px;
+    -o-border-radius: 80px;
+}
+.footer_wrapper .block_newsletter input{
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    height: 50px;
+}
+.footer_wrapper .block_newsletter input:focus, .footer_wrapper .block_newsletter button{
+    outline: none;
+    box-shadow: none;
+}
+.footer_wrapper .block_newsletter button{
+    font-size: 14px;
+    font-weight: 400;
+    padding: 15px 20px;
+    height: 50px;
+    line-height: 20px;
+    background-color: var(--bg-red);
+    border-color: var(--bg-red);
+    color: var(--text-white);
+    text-transform: uppercase;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+.footer_wrapper .block_newsletter button:hover{
+    background-color: var(--bg-green);
+    border-color: var(--bg-green);
+}
+.footer_wrapper ul li a{
+    font-size: 15px;
+    color: var(--text-white);
+    line-height: 30px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.footer_wrapper .footer_social_media_icon{
+    padding: 0;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    height: 38px;
+    text-align: center;
+    width: 38px;
+    margin: 0 10px 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-yellow);
+    color: var(--text-black);
+    text-decoration: none;
+}
+.footer_wrapper .footer_social_media_icon:hover{
+    background-color: var(--bg-green);
+    color: var(--text-white);
+}
+/* contactWithFooter section css code end here */
+
+
+
+/* Responsive CSS code starting here */
+@media (max-width:1300px){
+    /* custom css code */
+    h1{
+        font-size: 50px;
+    }
+    /* navbar css code */
+    .header_wrapper .menu-navbar-nav{
+        width: auto;
+    }
+}
+
+@media (max-width:1230px){
+    /* navbar css code */
+    .header_wrapper .nav-item{
+        margin: 0 5px;
+    }
+
+    /* banner css code */
+    .banner_wrapper{
+        padding: 50px 0 10px;
+    }
+}
+
+@media (max-width:1070px){
+    /* navbar css code */
+    .header_wrapper .nav-item .nav-link{
+        font-size: 16px;
+    }
+    /* banner css code */
+    .carousel-caption{
+        bottom: 1.25rem;
+    }
+}
+
+@media (max-width:992.5px){
+    /* custom css code */
+    h1{
+        font-size: 30px;
+    }
+    h3{
+        font-size: 20px;
+    }
+    h4{
+        font-size: 18px;
+    }
+    /* navbar css code */
+    .header_wrapper .navbar{
+        background-color: var(--bg-red);
+    }
+    .header-scrolled{
+        height: auto;
+    }
+    .header_wrapper .navbar-brand img{
+        width: 180px;
+    }
+    .header_wrapper .navbar-toggler:focus{
+        box-shadow: none;
+    }
+    .header_wrapper .menu-navbar-nav{
+        text-align: center;
+    }
+    .header_wrapper .nav-item .nav-link{
+        margin-top: 15px;
+    }
+    /* banner css code */
+    .banner_wrapper{
+        padding-top: 120px;
+    }
+    .banner_wrapper .carousel-inner{
+        height: 315px;
+    }
+    .banner_wrapper .carousel-item{
+        height: 100%;
+    }
+
+    /* footer css code */
+    .footer_wrapper .block_newsletter{
+        border-radius: 30px;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        -ms-border-radius: 30px;
+        -o-border-radius: 30px;
+}
+}
+
+@media (max-width:767px){
+    /* footer css code */
+    .footer_wrapper .footer_logo{
+        max-width: 50%;
+    }
+}
+
+@media (max-width:610px){
+    /* custom css code */
+    h1{
+        font-size: 25px;
+    }
+    h3{
+        font-size: 16px;
+    }
+    .main-btn{
+        font-size: 13px !important;
+    }
+    /* banner css code */
+    .banner_wrapper{
+        padding: 110px 0 30px 0;
+    }
+    .banner_wrapper .carousel-caption{
+        bottom: -0.25rem;
+    }
+    .banner_wrapper .carousel-inner{
+        height: 205px;
+    }
+    .banner_wrapper .carousel-item{
+        height: 100%;
+    }
+    .banner_wrapper .carousel-indicators{
+        bottom: -40px;
+    }
+}
+
+/* Responsive CSS code end here */
